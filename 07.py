@@ -84,16 +84,16 @@ getSize(tree)
 #####
 
 result = 0
-queue = [tree]
+stack = [tree]
 
-while queue:
-    current = queue.pop()
+while stack:
+    current = stack.pop()
     if current.size <= 100000:
         result += current.size
 
     for name, child in current.children.items():
         if child.isDir:
-            queue.append(child)
+            stack.append(child)
 
 print(result)
 
@@ -104,16 +104,16 @@ unused = 70000000 - tree.size
 needs = 30000000 - unused
 
 optimal_size = 1e9
-queue = [tree]
+stack = [tree]
 
-while queue:
-    current = queue.pop()
+while stack:
+    current = stack.pop()
 
     if current.size < optimal_size and current.size >= needs:
         optimal_size = current.size
 
     for name, child in current.children.items():
         if child.isDir:
-            queue.append(child)
+            stack.append(child)
 
 print(optimal_size)
