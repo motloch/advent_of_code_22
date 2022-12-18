@@ -1,0 +1,2 @@
+- for problem #14, I can use a set to remember the rock/stuck sand positions
+  https://github.com/hyper-neutrino/advent-of-code/blob/main/2022/day14p1.py
